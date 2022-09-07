@@ -1,0 +1,13 @@
+:root{
+    --main-bg-dark: #333232;
+    --main-bg-light: #fff;
+    --yellow: #FFF281;
+    --white: #fff;
+    --black: #000;
+    --btn-bg: #4F4F4F;
+    --btn-bg-active: #252E34;
+    --btn-bg-disable: #868B8C;
+    --btn-bg-yellow:#e0ca02;
+    --btn-border-yelow: 2px solid #FFF27A;
+    --btn-border-black: 2px solid #000;
+}

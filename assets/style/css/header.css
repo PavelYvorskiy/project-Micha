@@ -1,0 +1,214 @@
+.header {
+  width: 100%;
+  min-height: 60px;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--main-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.navbarContainer {
+  max-width: 1070px;
+  width: 100%;
+  display: flex;
+  display: block;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.navbarContent {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.animation-line {
+  width: 100%;
+  height: 2px;
+  background: var(--yellow);
+  animation: animate;
+  animation-duration: 2s;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.logo h5 {
+  color: var(--yellow);
+  letter-spacing: 1.2px;
+  animation: logo-title;
+  animation-duration: 2s;
+}
+.logo span {
+  color: #fff;
+  animation: logo-subtitle;
+  animation-duration: 1s;
+}
+
+.navmenu {
+  display: flex;
+  align-items: center;
+}
+.navmenu__item {
+  padding: 10px;
+  transition: 0.3s;
+}
+.navmenu__item:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+.navmenu__item:hover .navmenu__link {
+  color: var(--yellow);
+}
+.navmenu__link {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.navmenu__link_tel::before {
+  content: url(../../svg/phone.svg);
+  margin-right: 5px;
+}
+.navmenu__link.active {
+  color: var(--yellow);
+}
+
+.navbar-navigation {
+  position: relative;
+  height: 100%;
+  width: 80px;
+  display: none;
+}
+.navbar-navigation__btn {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background: transparent;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 100000;
+}
+
+.navbar-mob {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60%;
+  height: 100vh;
+  background: var(--main-bg-dark);
+  transform: translateX(110%);
+  transition: all 2s;
+}
+.navbar-mob.active {
+  transform: translateX(0);
+  transition: all 2s;
+}
+
+.navmenu-mob {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 0;
+}
+
+@media (max-width: 780px) {
+  .navbar-navigation {
+    display: block;
+  }
+  .navbar-navigation__btn {
+    display: block;
+    overflow: hidden;
+    z-index: 99;
+    margin-right: 10px;
+  }
+  .navbar-navigation__btn span {
+    display: block;
+    position: absolute;
+    top: 23px;
+    transform: rotate(180deg);
+    height: 2px;
+    width: 25px;
+    right: 12px;
+    background: var(--yellow);
+    transition: all 1s;
+  }
+  .navbar-navigation__btn span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    height: 2px;
+    width: 25px;
+    background: var(--yellow);
+    transition: 1s;
+    top: 8px;
+  }
+  .navbar-navigation__btn span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    height: 2px;
+    width: 25px;
+    background: var(--yellow);
+    transition: 1s;
+    bottom: 8px;
+  }
+  .navbar-navigation__btn.active span {
+    transition: all 0s;
+    width: 0;
+  }
+  .navbar-navigation__btn.active span::after {
+    bottom: 1px;
+    transform: rotate(45deg);
+    transition: 0.3s;
+  }
+  .navbar-navigation__btn.active span::before {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: 0.3s;
+  }
+  .navmenu {
+    display: none;
+  }
+  .navbar-mob {
+    display: block;
+  }
+}
+@keyframes animate {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes logo-title {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes logo-subtitle {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

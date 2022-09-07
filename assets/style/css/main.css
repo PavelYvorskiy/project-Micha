@@ -1,0 +1,59 @@
+.main {
+  width: 100%;
+  background: #f1f1f1;
+}
+
+.section {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--main-bg-light);
+}
+.section__dark {
+  background: var(--main-bg-dark);
+}
+.section__grey {
+  background: var(--btn-bg);
+}
+
+.button {
+  background: linear-gradient(267.26deg, rgba(51, 51, 51, 0.8) -211.12%, var(--btn-bg-yellow) 91.05%);
+  box-sizing: border-box;
+  color: var(--white);
+  display: block;
+  line-height: 19px;
+  padding: 10px;
+  transition: 0.4s;
+  width: fit-content;
+  position: relative;
+}
+.button span {
+  position: relative;
+  z-index: 2;
+  font-weight: 400;
+  color: var(--white);
+}
+.button::after {
+  background: linear-gradient(267.26deg, var(--btn-bg-yellow) 21.05%, var(--white) 211.12%);
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  margin: auto;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+.button:hover::after {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+/*# sourceMappingURL=main.css.map */
